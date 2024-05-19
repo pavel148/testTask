@@ -2,9 +2,6 @@ package com.korobkin.checkWeekend.services;
 
 import com.korobkin.checkWeekend.parsing.ParsingCalendarData;
 import com.korobkin.checkWeekend.utils.TimeZoneRu;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,10 +9,8 @@ import java.nio.file.Path;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
-
 import static com.korobkin.checkWeekend.links.Links.PATH_FILE;
-import static com.korobkin.checkWeekend.parsing.ParsingCalendarData.parsingLogic;
-import static com.korobkin.checkWeekend.services.SearchWeekendService.isOutsideWorkingHours;
+
 
 public class LeadingSearchLogic {
     private String dateTimeString;
@@ -25,7 +20,6 @@ public class LeadingSearchLogic {
 
     private long secondsSinceEpoch;
 
-    @Autowired
     public LeadingSearchLogic(String dateTimeString, String timeZoneString) {
         this.dateTimeString=dateTimeString;
         this.timeZoneString=timeZoneString;

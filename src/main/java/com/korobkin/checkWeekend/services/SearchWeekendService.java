@@ -1,15 +1,12 @@
 package com.korobkin.checkWeekend.services;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import java.time.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import static com.korobkin.checkWeekend.links.Links.PATH_FILE;
 import static com.korobkin.checkWeekend.utils.Months.monthNames;
 
 public class SearchWeekendService {
@@ -47,14 +44,4 @@ public class SearchWeekendService {
         }
         return false;
     }
-
-    public static boolean isOutsideWorkingHours(LocalDateTime localDateTime) {
-        // Определение времени начала и конца рабочего дня
-        LocalTime startOfWorkDay = LocalTime.of(9, 0);
-        LocalTime endOfWorkDay = LocalTime.of(18, 0);
-        LocalTime time = localDateTime.toLocalTime();
-
-        return time.isBefore(startOfWorkDay) || time.isAfter(endOfWorkDay);
-    }
-
 }

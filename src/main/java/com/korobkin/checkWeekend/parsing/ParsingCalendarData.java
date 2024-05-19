@@ -5,7 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,7 +13,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static com.korobkin.checkWeekend.links.Links.URL;
-
 
 public class ParsingCalendarData {
      public static void  parsingLogic(int year) throws IOException {

@@ -1,31 +1,7 @@
 package com.korobkin.checkWeekend;
-
-import com.korobkin.checkWeekend.parsing.ParsingCalendarData;
-
 import com.korobkin.checkWeekend.services.LeadingSearchLogic;
-import com.korobkin.checkWeekend.services.SearchWeekendService;
-
-
-
-import com.korobkin.checkWeekend.utils.TimeZoneRu;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
-
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.security.PrivateKey;
-import java.sql.Timestamp;
-import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-
-import static com.korobkin.checkWeekend.parsing.ParsingCalendarData.parsingLogic;
-import static com.korobkin.checkWeekend.services.SearchWeekendService.*;
 
 
 
