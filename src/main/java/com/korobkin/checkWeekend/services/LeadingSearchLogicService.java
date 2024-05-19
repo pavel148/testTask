@@ -12,7 +12,7 @@ import java.util.Optional;
 import static com.korobkin.checkWeekend.links.Links.PATH_FILE;
 
 
-public class LeadingSearchLogic {
+public class LeadingSearchLogicService {
     private String dateTimeString;
     private String timeZoneString;
     private LocalDateTime localDateTime;
@@ -20,7 +20,11 @@ public class LeadingSearchLogic {
 
     private long secondsSinceEpoch;
 
-    public LeadingSearchLogic(String dateTimeString, String timeZoneString) {
+    public LeadingSearchLogicService(){
+
+    }
+
+    public LeadingSearchLogicService(String dateTimeString, String timeZoneString) {
         this.dateTimeString=dateTimeString;
         this.timeZoneString=timeZoneString;
     }
