@@ -31,14 +31,7 @@ public class LeadingSearchLogic {
         this.timeZoneString=timeZoneString;
     }
 
-    public void setDateTimeString(String dateTimeString) {
-        this.dateTimeString = dateTimeString;
-    }
-
-    public void setTimeZoneString(String timeZoneString) {
-        this.timeZoneString = timeZoneString;
-    }
-    public void logic() throws IOException {
+    public boolean checkWeekend() throws IOException {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
@@ -56,18 +49,14 @@ public class LeadingSearchLogic {
 
         LocalDateTime localDateTime1 = TimeZoneRu.convertEpochSecondsToLocalDateTime(secondsSinceEpoch);
 
-        if (isOutsideWorkingHours(localDateTime1)) {
-            System.out.println("true");
-            return;
-        }
+        if (isOutsideWorkingHours(localDateTime1))  return true;
+
         ensureCalendarFileExists(localDateTime1.getYear());
         boolean isWeekend = SearchWeekendService.isDayWeekend(PATH_FILE + localDateTime1.getYear() + ".txt", LocalDate.from(localDateTime1));
 
-        if (isWeekend) {
-            System.out.println("true");
-            return;
-        }
-        System.out.println("false");
+        if (isWeekend)  return true;
+
+        return false;
     }
 
     private Optional<LocalDateTime> parseDateTime(String dateTimeString, DateTimeFormatter formatter) {
@@ -100,6 +89,12 @@ public class LeadingSearchLogic {
         }
     }
 
+    public void setDateTimeString(String dateTimeString) {
+        this.dateTimeString = dateTimeString;
+    }
+    public void setTimeZoneString(String timeZoneString) {
+        this.timeZoneString = timeZoneString;
+    }
 }
 
 

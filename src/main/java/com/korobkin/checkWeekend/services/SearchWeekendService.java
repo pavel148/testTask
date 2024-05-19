@@ -15,11 +15,11 @@ import static com.korobkin.checkWeekend.utils.Months.monthNames;
 public class SearchWeekendService {
 
     public static boolean isDayWeekend(String filename, LocalDate date) {
+
         String month = monthNames.get(String.valueOf(date.getMonth()));
         if (month == null) {
             throw new IllegalArgumentException("Invalid month");
         }
-
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
             boolean isMonthFound = false;
@@ -57,17 +57,4 @@ public class SearchWeekendService {
         return time.isBefore(startOfWorkDay) || time.isAfter(endOfWorkDay);
     }
 
-    //    public static boolean doesTxtFileExist(String fileName) {
-//        String directoryPath = PATH_FILE;
-//        File directory = new File(directoryPath);
-//        File[] files = directory.listFiles();
-//        if (files != null) {
-//            for (File file : files) {
-//                if (file.isFile() && file.getName().equals(fileName)) {
-//                    return true;
-//                }
-//            }
-//        }
-//        return false;
-//    }
 }
